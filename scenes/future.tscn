@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=4 uid="uid://da2bg322p6ksl"]
+
+[ext_resource type="Texture2D" uid="uid://c3gyce2dk8vym" path="res://assets/sciana-nowoczesna.png" id="1_8dyw2"]
+[ext_resource type="Texture2D" uid="uid://811er2mhsson" path="res://assets/declaration.png" id="2_vthoc"]
+[ext_resource type="Texture2D" uid="uid://imm7518cbjyg" path="res://assets/podesty-future.png" id="3_goven"]
+[ext_resource type="PackedScene" uid="uid://clhbu8cebw0yg" path="res://scenes/camera_mover.tscn" id="4_tihku"]
+[ext_resource type="PackedScene" uid="uid://btnwya23mkwso" path="res://scenes/player.tscn" id="5_13ns3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2cr3"]
+texture = ExtResource("1_8dyw2")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d6ts4"]
+texture = ExtResource("2_vthoc")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kkee5"]
+texture = ExtResource("3_goven")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_m6d2e"]
+sources/0 = SubResource("TileSetAtlasSource_q2cr3")
+sources/1 = SubResource("TileSetAtlasSource_d6ts4")
+sources/2 = SubResource("TileSetAtlasSource_kkee5")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqeqq"]
+size = Vector2(63.8, 64.4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t345t"]
+size = Vector2(320, 317)
+
+[node name="Past" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(701.02, 168.535)
+scale = Vector2(20, 20)
+tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAIAP//AAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAEAAQAAQAAAAAAAAAGAAQAAgAAAAAAAAAIAAYAAgAAAAAAAAAJAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAFAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAEAAgAAAAAAAAAAAADAAgAAAAAAAAAAAACAAgAAAAAAAAAAAABAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAD//wwAAAAAAAAAAAAAAAwAAAAAAAAAAAABAAwAAAAAAAAAAAACAAwAAAAAAAAAAAADAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAAFAAwAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAJAAsAAAAAAAAAAAAJAAoAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_m6d2e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(2788, 1626)
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.5, -3.39999)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vqeqq")
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(3640, 2386)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-219, -139)
+shape = SubResource("RectangleShape2D_t345t")
+one_way_collision = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(966, 811)
+
+[node name="CameraMover" parent="Camera2D" instance=ExtResource("4_tihku")]
+position = Vector2(500, -17)
+scale = Vector2(1, 2)
+
+[node name="Player" parent="." instance=ExtResource("5_13ns3")]
+position = Vector2(535, 952)
+scale = Vector2(3.565, 3.565)
