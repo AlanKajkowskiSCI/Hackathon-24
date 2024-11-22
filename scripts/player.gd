@@ -4,6 +4,8 @@ var speed: float = 400
 var jump_height: float = -900
 var gravity: float = 2000
 
+var time_stop: bool = false
+
 func _physics_process(delta: float):
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -16,3 +18,6 @@ func _physics_process(delta: float):
 	velocity.x = direction * speed
 	
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("time_stop_toggle"):
+		Global.time_stop = not Global.time_stop

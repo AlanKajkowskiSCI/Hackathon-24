@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhlcflji112xn"]
+
+[ext_resource type="Texture2D" uid="uid://bfijx5ic3gqt8" path="res://icon.svg" id="1_e4hje"]
+[ext_resource type="Script" path="res://scripts/moving_obstacle.gd" id="1_uisya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74x23"]
+size = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_w8mf1"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_wg1x5"]
+resource_name = "move"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(0.3, 0.3, 0.3),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 192), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_luify"]
+_data = {
+"RESET": SubResource("Animation_w8mf1"),
+"move": SubResource("Animation_wg1x5")
+}
+
+[node name="MovingObstacle" type="Node2D"]
+script = ExtResource("1_uisya")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+scale = Vector2(1, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_e4hje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_74x23")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_luify")
+}
+autoplay = "move"
