@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://dft7g3x1jwwpv"]
+[gd_scene load_steps=11 format=4 uid="uid://dft7g3x1jwwpv"]
 
 [ext_resource type="PackedScene" uid="uid://btnwya23mkwso" path="res://scenes/player.tscn" id="1_aqim1"]
+[ext_resource type="Texture2D" uid="uid://ytp2cfy1o3u4" path="res://graphics/background_mountains.png" id="1_fln2x"]
 [ext_resource type="PackedScene" uid="uid://cxxfav2n3nb7f" path="res://scenes/power_collectible.tscn" id="2_4a2h7"]
 [ext_resource type="Texture2D" uid="uid://bfijx5ic3gqt8" path="res://icon.svg" id="2_q434d"]
 [ext_resource type="Texture2D" uid="uid://bcu2xsarcdjns" path="res://graphics/sand_brick.png" id="3_4tx8q"]
@@ -25,8 +26,15 @@ sources/0 = SubResource("TileSetAtlasSource_2npc5")
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_aqim1")]
-position = Vector2(224, 320)
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1024, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(571, 303.07)
+scale = Vector2(8, 8)
+texture = ExtResource("1_fln2x")
 
 [node name="PowerCollectible" parent="." instance=ExtResource("2_4a2h7")]
 position = Vector2(1032, 216)
@@ -79,3 +87,6 @@ position = Vector2(32, 40)
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD//wEAAAAAAAAAAAD//wMAAAAAAAAAAAD//wUAAAAAAAAAAAD//wcAAAAAAAAAAAD//wkAAAAAAAAAAAABAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAABAP//AAAAAAAAAAADAP//AAAAAAAAAAAFAP//AAAAAAAAAAAHAP//AAAAAAAAAAAJAP//AAAAAAAAAAALAP//AAAAAAAAAAAHAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAALAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAARAAkAAAAAAAAAAAARAAMAAAAAAAAAAAARAAEAAAAAAAAAAAARAP//AAAAAAAAAAAPAP//AAAAAAAAAAANAP//AAAAAAAAAAATAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAAbAAkAAAAAAAAAAAAdAAkAAAAAAAAAAAAfAAkAAAAAAAAAAAAhAAkAAAAAAAAAAAAjAAkAAAAAAAAAAAATAP//AAAAAAAAAAAVAP//AAAAAAAAAAAXAP//AAAAAAAAAAAZAP//AAAAAAAAAAAbAP//AAAAAAAAAAAdAP//AAAAAAAAAAAfAP//AAAAAAAAAAAhAP//AAAAAAAAAAAjAP//AAAAAAAAAAAjAAEAAAAAAAAAAAAjAAMAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_nyux8")
+
+[node name="Player" parent="." instance=ExtResource("1_aqim1")]
+position = Vector2(224, 320)

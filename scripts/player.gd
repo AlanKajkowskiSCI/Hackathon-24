@@ -30,4 +30,8 @@ func _physics_process(delta: float):
 		sprite.play("idle")
 	else:
 		sprite.play("walk")
-		sprite.flip_h = direction < 0
+		
+	if direction > 0:
+		sprite.flip_h = 0
+	elif direction < 0:
+		sprite.flip_h = 1
