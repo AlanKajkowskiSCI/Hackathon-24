@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://da2bg322p6ksl"]
+[gd_scene load_steps=17 format=4 uid="uid://da2bg322p6ksl"]
 
 [ext_resource type="Texture2D" uid="uid://c3gyce2dk8vym" path="res://assets/sciana-nowoczesna.png" id="1_8dyw2"]
 [ext_resource type="Texture2D" uid="uid://811er2mhsson" path="res://assets/declaration.png" id="2_vthoc"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bpn044b4qpa7p" path="res://assets/kosmos.png" id="4_vpoum"]
 [ext_resource type="PackedScene" uid="uid://btnwya23mkwso" path="res://scenes/player.tscn" id="5_13ns3"]
 [ext_resource type="Texture2D" uid="uid://cu6gwcuafk42j" path="res://assets/spaceship.png" id="6_y4v1j"]
+[ext_resource type="PackedScene" uid="uid://cxxfav2n3nb7f" path="res://scenes/power_collectible.tscn" id="8_y0y0u"]
+[ext_resource type="Texture2D" uid="uid://d2ub5oa6ineuc" path="res://1000011655.jpg" id="9_tc7we"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2cr3"]
 texture = ExtResource("1_8dyw2")
@@ -87,3 +89,12 @@ repeat_times = 5
 position = Vector2(3378, 668)
 scale = Vector2(15.97, 15.97)
 texture = ExtResource("6_y4v1j")
+
+[node name="PowerCollectible" parent="." instance=ExtResource("8_y0y0u")]
+position = Vector2(855, 3735)
+scale = Vector2(0.905, 0.905)
+
+[node name="Sprite2D2" type="Sprite2D" parent="PowerCollectible"]
+position = Vector2(1766.85, -2343.65)
+scale = Vector2(0.327884, 0.237655)
+texture = ExtResource("9_tc7we")
