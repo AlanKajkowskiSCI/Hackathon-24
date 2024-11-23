@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://i5difyjia4vh"]
+
+[ext_resource type="Texture2D" uid="uid://bvtqljbs4c2jt" path="res://assets/power-future.png" id="1_e3uom"]
+[ext_resource type="Script" path="res://scenes/power_future.gd" id="1_hf3qs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oral1"]
+radius = 15.0
+height = 68.0
+
+[node name="Power-future" type="Area2D"]
+script = ExtResource("1_hf3qs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(22.5, 24)
+scale = Vector2(3.8125, 4)
+texture = ExtResource("1_e3uom")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(22, 25)
+shape = SubResource("CapsuleShape2D_oral1")
