@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://lyjs0niomobn" path="res://graphics/platform_sand_02.png" id="4_c1w0g"]
 [ext_resource type="Texture2D" uid="uid://tlelac3usw3s" path="res://graphics/background_clouds.png" id="5_jxoqd"]
 [ext_resource type="Texture2D" uid="uid://cljxfro654ja5" path="res://graphics/platform_sand_03.png" id="5_x60ov"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://3e0xot2458dm" path="res://scenes/sign.tscn" id="14_ko7yi"]
 [ext_resource type="PackedScene" uid="uid://dy6leh4gxgmof" path="res://scenes/spike_obstacle.tscn" id="14_sqedk"]
 [ext_resource type="Texture2D" uid="uid://dxeuvxybd8p56" path="res://graphics/button.png" id="15_jdqrm"]
@@ -21,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://dwhompqtyi80y" path="res://graphics/statues/anubis.png" id="17_idp3t"]
 [ext_resource type="Texture2D" uid="uid://diy6e875f7qdy" path="res://graphics/statues/Maat.png" id="18_ojeh2"]
 [ext_resource type="PackedScene" uid="uid://m1dfo0nwoif0" path="res://scenes/rift.tscn" id="21_asrm1"]
+=======
+[ext_resource type="PackedScene" path="res://scenes/spike_obstacle.tscn" id="14_sqedk"]
+>>>>>>> 6df1c90a2a075f77109b0bfb57dd4eedcb7b7f4c
 
 [sub_resource type="Theme" id="Theme_myg01"]
 default_font = ExtResource("3_btjdu")
