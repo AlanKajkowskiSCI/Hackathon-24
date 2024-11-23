@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c16bh0dkuiy5h"
-path="res://.godot/imported/rysunek logo gry.png-d869d88ac7e95ebe315e8fc3adbeea1e.ctex"
+uid="uid://daflh55k3peyt"
+path="res://.godot/imported/Reklama tło.png-a7edcc13dcb820d30fa4e0a9535c573c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Reklamowanie gry/rysunek logo gry.png"
-dest_files=["res://.godot/imported/rysunek logo gry.png-d869d88ac7e95ebe315e8fc3adbeea1e.ctex"]
+source_file="res://assets/Reklamowanie gry/Reklama tło.png"
+dest_files=["res://.godot/imported/Reklama tło.png-a7edcc13dcb820d30fa4e0a9535c573c.ctex"]
 
 [params]
 
