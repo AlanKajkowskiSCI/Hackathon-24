@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://lmr2ayvs1kb0"
+=======
+uid="uid://bshots8p01y5q"
+>>>>>>> 1bb2394d3fcbea5a02627d64003f87f804847b85
 path="res://.godot/imported/Ikonka gry.png-e991d6fd525d47f31d297e8e78977bf1.ctex"
 metadata={
 "vram_texture": false
