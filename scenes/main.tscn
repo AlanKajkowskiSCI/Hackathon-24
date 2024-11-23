@@ -135,26 +135,33 @@ offset_bottom = 792.0
 
 [node name="MovingObstacle" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(1472, 224)
+script = null
 
 [node name="MovingObstacle4" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(3568, -16)
+script = null
 
 [node name="MovingObstacle5" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(3568, 384)
 scale = Vector2(1, -1)
+script = null
 
 [node name="MovingObstacle6" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(4000, -16)
+script = null
 
 [node name="MovingObstacle7" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(4000, 384)
 scale = Vector2(1, -1)
+script = null
 
 [node name="MovingObstacle2" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(1728, 224)
+script = null
 
 [node name="MovingObstacle3" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(1984, 224)
+script = null
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(32, 40)
