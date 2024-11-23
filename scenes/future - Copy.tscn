@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://imm7518cbjyg" path="res://assets/podesty-future.png" id="3_goven"]
 [ext_resource type="Texture2D" uid="uid://bpn044b4qpa7p" path="res://assets/kosmos.png" id="4_vpoum"]
 [ext_resource type="PackedScene" uid="uid://btnwya23mkwso" path="res://scenes/player.tscn" id="5_13ns3"]
-[ext_resource type="Script" path="res://player-future.gd" id="6_jwj8i"]
+[ext_resource type="Script" path="res://scripts/player-future.gd" id="6_jwj8i"]
 [ext_resource type="Texture2D" uid="uid://c5wi3dqcc1sw2" path="res://assets/1000011655.jpg" id="8_r55t6"]
 [ext_resource type="PackedScene" uid="uid://cxxfav2n3nb7f" path="res://scenes/power_collectible.tscn" id="8_y0y0u"]
 [ext_resource type="Texture2D" uid="uid://orbwm3kycr7n" path="res://graphics/papier.png" id="9_crqdg"]
