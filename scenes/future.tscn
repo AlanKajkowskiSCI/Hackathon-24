@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cxxfav2n3nb7f" path="res://scenes/power_collectible.tscn" id="8_y0y0u"]
 [ext_resource type="Texture2D" uid="uid://orbwm3kycr7n" path="res://graphics/papier.png" id="9_crqdg"]
 [ext_resource type="Texture2D" uid="uid://cu6gwcuafk42j" path="res://assets/spaceship.png" id="9_eirvk"]
-[ext_resource type="PackedScene" uid="uid://br3x07vx30eev" path="res://scenes/moving_obstacle-future.tscn" id="12_d7iny"]
+[ext_resource type="PackedScene" path="res://scenes/moving_obstacle-future.tscn" id="12_d7iny"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2cr3"]
 texture = ExtResource("1_8dyw2")

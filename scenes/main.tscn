@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dft7g3x1jwwpv"]
+[gd_scene load_steps=25 format=4 uid="uid://dft7g3x1jwwpv"]
 
 [ext_resource type="PackedScene" uid="uid://btnwya23mkwso" path="res://scenes/player.tscn" id="1_aqim1"]
 [ext_resource type="Texture2D" uid="uid://ytp2cfy1o3u4" path="res://graphics/background_mountains.png" id="1_fln2x"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://lyjs0niomobn" path="res://graphics/platform_sand_02.png" id="4_c1w0g"]
 [ext_resource type="Texture2D" uid="uid://tlelac3usw3s" path="res://graphics/background_clouds.png" id="5_jxoqd"]
 [ext_resource type="Texture2D" uid="uid://cljxfro654ja5" path="res://graphics/platform_sand_03.png" id="5_x60ov"]
+[ext_resource type="PackedScene" uid="uid://dy6leh4gxgmof" path="res://scenes/spike_obstacle.tscn" id="14_sqedk"]
 
 [sub_resource type="Theme" id="Theme_myg01"]
 default_font = ExtResource("3_btjdu")
@@ -236,6 +237,110 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_egupb")
 one_way_collision = true
 
+[node name="Platform29" type="StaticBody2D" parent="."]
+position = Vector2(6112, 427)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform29"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_ax0uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform29"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_egupb")
+one_way_collision = true
+
+[node name="Platform30" type="StaticBody2D" parent="."]
+position = Vector2(6208, 243)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform30"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_ax0uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform30"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_egupb")
+one_way_collision = true
+
+[node name="Platform32" type="StaticBody2D" parent="."]
+position = Vector2(6776, 608)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform32"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_ax0uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform32"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_egupb")
+one_way_collision = true
+
+[node name="Platform33" type="StaticBody2D" parent="."]
+position = Vector2(6960, 440)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform33"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_ax0uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform33"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_egupb")
+one_way_collision = true
+
+[node name="Platform34" type="StaticBody2D" parent="."]
+position = Vector2(7272, 440)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform34"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_ax0uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform34"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_egupb")
+one_way_collision = true
+
+[node name="Platform35" type="StaticBody2D" parent="."]
+position = Vector2(7592, 440)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform35"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_ax0uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform35"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_egupb")
+one_way_collision = true
+
+[node name="Platform36" type="StaticBody2D" parent="."]
+position = Vector2(7912, 440)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform36"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_ax0uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform36"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_egupb")
+one_way_collision = true
+
+[node name="Platform26" type="StaticBody2D" parent="."]
+position = Vector2(4352, 272)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform26"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_ax0uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform26"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_egupb")
+one_way_collision = true
+
 [node name="Platform27" type="StaticBody2D" parent="."]
 position = Vector2(3360, 456)
 metadata/_edit_group_ = true
@@ -245,6 +350,19 @@ scale = Vector2(4, 4)
 texture = ExtResource("5_x60ov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform27"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_jqavl")
+one_way_collision = true
+
+[node name="Platform31" type="StaticBody2D" parent="."]
+position = Vector2(6552, 560)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform31"]
+scale = Vector2(4, 4)
+texture = ExtResource("5_x60ov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform31"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_jqavl")
 one_way_collision = true
@@ -300,39 +418,82 @@ offset_bottom = 792.0
 
 [node name="MovingObstacle" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(1472, 224)
-script = null
 
 [node name="MovingObstacle4" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(3568, -16)
-script = null
+
+[node name="MovingObstacle10" parent="MovingObstacles" instance=ExtResource("3_u337s")]
+position = Vector2(5456, 304)
+
+[node name="MovingObstacle11" parent="MovingObstacles" instance=ExtResource("3_u337s")]
+position = Vector2(5648, 304)
+
+[node name="MovingObstacle12" parent="MovingObstacles" instance=ExtResource("3_u337s")]
+position = Vector2(5840, 304)
+
+[node name="MovingObstacle8" parent="MovingObstacles" instance=ExtResource("3_u337s")]
+position = Vector2(5272, 272)
+rotation = 1.5708
+
+[node name="MovingObstacle13" parent="MovingObstacles" instance=ExtResource("3_u337s")]
+position = Vector2(6668, 288)
+rotation = 1.5708
+
+[node name="MovingObstacle9" parent="MovingObstacles" instance=ExtResource("3_u337s")]
+position = Vector2(4840, 272)
+rotation = 1.5708
+scale = Vector2(1, -1)
 
 [node name="MovingObstacle5" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(3568, 384)
 scale = Vector2(1, -1)
-script = null
+
+[node name="MovingObstacle14" parent="MovingObstacles" instance=ExtResource("3_u337s")]
+position = Vector2(7288, 616)
+scale = Vector2(1, -1)
+
+[node name="MovingObstacle15" parent="MovingObstacles" instance=ExtResource("3_u337s")]
+position = Vector2(7608, 616)
+scale = Vector2(1, -1)
+
+[node name="MovingObstacle16" parent="MovingObstacles" instance=ExtResource("3_u337s")]
+position = Vector2(7928, 616)
+scale = Vector2(1, -1)
 
 [node name="MovingObstacle6" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(4000, -16)
-script = null
 
 [node name="MovingObstacle7" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(4000, 384)
 scale = Vector2(1, -1)
-script = null
 
 [node name="MovingObstacle2" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(1728, 224)
-script = null
 
 [node name="MovingObstacle3" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(1984, 224)
-script = null
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMaps" type="Node" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMaps"]
 position = Vector2(32, 40)
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD//wEAAAAAAAAAAAD//wMAAAAAAAAAAAD//wUAAAAAAAAAAAD//wcAAAAAAAAAAAD//wkAAAAAAAAAAAABAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAABAP//AAAAAAAAAAADAP//AAAAAAAAAAAFAP//AAAAAAAAAAAHAP//AAAAAAAAAAAJAP//AAAAAAAAAAALAP//AAAAAAAAAAAHAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAALAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAARAAkAAAAAAAAAAAARAAMAAAAAAAAAAAARAAEAAAAAAAAAAAARAP//AAAAAAAAAAAPAP//AAAAAAAAAAANAP//AAAAAAAAAAATAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAAbAAkAAAAAAAAAAAAdAAkAAAAAAAAAAAAfAAkAAAAAAAAAAAAhAAkAAAAAAAAAAAAjAAkAAAAAAAAAAAATAP//AAAAAAAAAAAVAP//AAAAAAAAAAAXAP//AAAAAAAAAAAZAP//AAAAAAAAAAAbAP//AAAAAAAAAAAdAP//AAAAAAAAAAAfAP//AAAAAAAAAAAhAP//AAAAAAAAAAAjAP//AAAAAAAAAAAjAAEAAAAAAAAAAAAjAAMAAAAAAAAAAAAlAAkAAAAAAAAAAAAnAAkAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD//wEAAAAAAAAAAAD//wMAAAAAAAAAAAD//wUAAAAAAAAAAAD//wcAAAAAAAAAAAD//wkAAAAAAAAAAAABAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAABAP//AAAAAAAAAAADAP//AAAAAAAAAAAFAP//AAAAAAAAAAAHAP//AAAAAAAAAAAJAP//AAAAAAAAAAALAP//AAAAAAAAAAAHAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAALAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAARAAkAAAAAAAAAAAARAAMAAAAAAAAAAAARAAEAAAAAAAAAAAARAP//AAAAAAAAAAAPAP//AAAAAAAAAAANAP//AAAAAAAAAAATAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAAbAAkAAAAAAAAAAAAdAAkAAAAAAAAAAAAfAAkAAAAAAAAAAAAhAAkAAAAAAAAAAAAjAAkAAAAAAAAAAAATAP//AAAAAAAAAAAVAP//AAAAAAAAAAAXAP//AAAAAAAAAAAZAP//AAAAAAAAAAAbAP//AAAAAAAAAAAdAP//AAAAAAAAAAAfAP//AAAAAAAAAAAhAP//AAAAAAAAAAAjAP//AAAAAAAAAAAjAAEAAAAAAAAAAAAjAAMAAAAAAAAAAAAlAAkAAAAAAAAAAAAnAAkAAAAAAAAAAABAAAcAAAAAAAAAAABCAAcAAAAAAAAAAABEAAcAAAAAAAAAAABGAAcAAAAAAAAAAABGAAUAAAAAAAAAAABGAAMAAAAAAAAAAABIAAMAAAAAAAAAAABKAAMAAAAAAAAAAABKAAUAAAAAAAAAAABKAAcAAAAAAAAAAABKAAkAAAAAAAAAAABMAAkAAAAAAAAAAABOAAkAAAAAAAAAAABQAAkAAAAAAAAAAABSAAkAAAAAAAAAAABSAAMAAAAAAAAAAABSAAEAAAAAAAAAAABSAP//AAAAAAAAAABSAP3/AAAAAAAAAABAAAkAAAAAAAAAAABUAAkAAAAAAAAAAABUAAMAAAAAAAAAAABWAAMAAAAAAAAAAABWAAkAAAAAAAAAAABYAAMAAAAAAAAAAABYAAkAAAAAAAAAAABaAAMAAAAAAAAAAABcAAMAAAAAAAAAAABaAAkAAAAAAAAAAABcAAkAAAAAAAAAAABeAAkAAAAAAAAAAABgAAkAAAAAAAAAAABcAAEAAAAAAAAAAABcAP//AAAAAAAAAABcAP3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_nyux8")
 
 [node name="Player" parent="." instance=ExtResource("1_aqim1")]
 position = Vector2(224, 320)
+
+[node name="SpikeObstacle" parent="." instance=ExtResource("14_sqedk")]
+position = Vector2(6376, 456)
+
+[node name="SpikeObstacle2" parent="." instance=ExtResource("14_sqedk")]
+position = Vector2(6376, 288)
+scale = Vector2(1, -1)
+
+[node name="SpikeObstacle3" parent="." instance=ExtResource("14_sqedk")]
+position = Vector2(6664, 264)
+
+[node name="SpikeObstacle4" parent="." instance=ExtResource("14_sqedk")]
+position = Vector2(6664, 96)
+scale = Vector2(1, -1)
