@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dhlcflji112xn"]
 
-[ext_resource type="Script" path="res://scenes/moving_obstacle-future.tscn" id="1_ibyky"]
-[ext_resource type="Texture2D" uid="uid://b1e5c3gj4a3l3" path="res://assets/bolec-futurystyczny.png" id="2_4dnsu"]
+[ext_resource type="Script" path="res://scripts/moving_obstacle.gd" id="1_uisya"]
+[ext_resource type="Texture2D" uid="uid://cj55x8b6v3b3i" path="res://graphics/sand_spike.png" id="2_2hnts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74x23"]
 size = Vector2(56, 184)
@@ -33,17 +33,16 @@ _data = {
 }
 
 [node name="MovingObstacle" type="Node2D"]
-script = ExtResource("1_ibyky")
+script = ExtResource("1_uisya")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-2, 0)
-scale = Vector2(3.5, 11.5)
-texture = ExtResource("2_4dnsu")
+scale = Vector2(4, 4)
+texture = ExtResource("2_2hnts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-2, 0)
+position = Vector2(-12, 0)
 shape = SubResource("RectangleShape2D_74x23")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]

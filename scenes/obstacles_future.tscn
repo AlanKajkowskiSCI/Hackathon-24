@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3etga2he2cow"]
+
+[ext_resource type="Texture2D" uid="uid://b1e5c3gj4a3l3" path="res://assets/bolec-futurystyczny.png" id="1_cj84k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud7jb"]
+size = Vector2(16, 30)
+
+[node name="obstacles-future" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, 7)
+scale = Vector2(1, 1.875)
+texture = ExtResource("1_cj84k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_ud7jb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]

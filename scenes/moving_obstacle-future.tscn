@@ -1,6 +1,52 @@
-extends Node2D
+[gd_scene load_steps=7 format=3 uid="uid://dk8n0g63rq2nj"]
 
-@onready var animation: Node = $CharacterBody2D/AnimationPlayer 
+[ext_resource type="Script" path="res://scripts/moving_obstacle.gd" id="1_h677m"]
+[ext_resource type="Texture2D" uid="uid://b1e5c3gj4a3l3" path="res://assets/bolec-futurystyczny.png" id="2_4dnsu"]
 
-func _process(_delta: float):
-	animation.speed_scale = int(not Global.time_stop)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74x23"]
+size = Vector2(56, 184)
+
+[sub_resource type="Animation" id="Animation_w8mf1"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_wg1x5"]
+resource_name = "move"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(0.3, 0.3, 0.3),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 192), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_luify"]
+_data = {
+"RESET": SubResource("Animation_w8mf1"),
+"move": SubResource("Animation_wg1x5")
+}
+
+[node name="MovingObstacle" type="Node2D"]
+script = ExtResource("1_h677m")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(4, 4)
+texture = ExtResource("2_i63l3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-12, 0)
+shape = SubResource("RectangleShape2D_74x23")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_luify")
+}
+autoplay = "move"
