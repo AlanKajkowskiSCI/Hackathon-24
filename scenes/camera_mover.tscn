@@ -1,14 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://clhbu8cebw0yg"]
-
-[ext_resource type="Script" path="res://scripts/camera_mover.gd" id="1_aogwl"]
+[gd_scene load_steps=2 format=3 uid="uid://clhbu8cebw0yg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kdt0"]
 size = Vector2(20, 128)
 
 [node name="CameraMover" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_aogwl")
-free_camera = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5kdt0")
