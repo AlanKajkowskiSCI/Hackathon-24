@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://btnwya23mkwso"]
+[gd_scene load_steps=14 format=3 uid="uid://btnwya23mkwso"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_soq00"]
 [ext_resource type="Texture2D" uid="uid://behvsa5s5qa8n" path="res://graphics/player.png" id="2_88xqk"]
@@ -73,6 +73,35 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a4gm"]
 size = Vector2(80, 96)
 
+[sub_resource type="Animation" id="Animation_yl28k"]
+resource_name = "countdown"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [3],
+"method": &"countdown"
+}, {
+"args": [2],
+"method": &"countdown"
+}, {
+"args": [1],
+"method": &"countdown"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2i7ut"]
+_data = {
+"countdown": SubResource("Animation_yl28k")
+}
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_soq00")
@@ -84,3 +113,14 @@ animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5a4gm")
+
+[node name="CountdownPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2i7ut")
+}
+
+[node name="TimeStopTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="TimeStopTimer" to="." method="_on_time_stop_timer_timeout"]

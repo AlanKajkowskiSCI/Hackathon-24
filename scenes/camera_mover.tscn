@@ -8,6 +8,7 @@ size = Vector2(20, 128)
 [node name="CameraMover" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_aogwl")
+free_camera = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5kdt0")
