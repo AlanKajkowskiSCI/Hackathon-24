@@ -1,7 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://btnwya23mkwso"]
+[gd_scene load_steps=17 format=3 uid="uid://btnwya23mkwso"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_soq00"]
 [ext_resource type="Texture2D" uid="uid://behvsa5s5qa8n" path="res://graphics/player.png" id="2_88xqk"]
+[ext_resource type="AudioStream" uid="uid://48mo0i6q3ejp" path="res://audio/jump.wav" id="3_2hu3i"]
+[ext_resource type="AudioStream" uid="uid://bmw4jl6esxy2e" path="res://audio/time_stop.wav" id="3_sff1q"]
+[ext_resource type="AudioStream" uid="uid://btdj1066ss0cj" path="res://audio/hit.wav" id="5_e0kwj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smkwx"]
 atlas = ExtResource("2_88xqk")
@@ -128,5 +131,14 @@ one_shot = true
 [node name="TimeStopCooldown" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="AudioTimeStop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_sff1q")
+
+[node name="AudioJump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2hu3i")
+
+[node name="AudioHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_e0kwj")
 
 [connection signal="timeout" from="TimeStopTimer" to="." method="_on_time_stop_timer_timeout"]

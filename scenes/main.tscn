@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://dft7g3x1jwwpv"]
+[gd_scene load_steps=38 format=4 uid="uid://dft7g3x1jwwpv"]
 
 [ext_resource type="PackedScene" uid="uid://btnwya23mkwso" path="res://scenes/player.tscn" id="1_aqim1"]
 [ext_resource type="Texture2D" uid="uid://ytp2cfy1o3u4" path="res://graphics/background_mountains.png" id="1_fln2x"]
@@ -11,9 +11,9 @@
 [ext_resource type="FontFile" uid="uid://s6g0k4l1avi6" path="res://fonts/operius_mono.ttf" id="3_btjdu"]
 [ext_resource type="PackedScene" uid="uid://dhlcflji112xn" path="res://scenes/moving_obstacle.tscn" id="3_u337s"]
 [ext_resource type="Texture2D" uid="uid://lyjs0niomobn" path="res://graphics/platform_sand_02.png" id="4_c1w0g"]
+[ext_resource type="AudioStream" uid="uid://c4m3a80noejeu" path="res://audio/new_power.wav" id="4_qf74q"]
 [ext_resource type="Texture2D" uid="uid://tlelac3usw3s" path="res://graphics/background_clouds.png" id="5_jxoqd"]
 [ext_resource type="Texture2D" uid="uid://cljxfro654ja5" path="res://graphics/platform_sand_03.png" id="5_x60ov"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://3e0xot2458dm" path="res://scenes/sign.tscn" id="14_ko7yi"]
 [ext_resource type="PackedScene" uid="uid://dy6leh4gxgmof" path="res://scenes/spike_obstacle.tscn" id="14_sqedk"]
 [ext_resource type="Texture2D" uid="uid://dxeuvxybd8p56" path="res://graphics/button.png" id="15_jdqrm"]
@@ -22,9 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://dwhompqtyi80y" path="res://graphics/statues/anubis.png" id="17_idp3t"]
 [ext_resource type="Texture2D" uid="uid://diy6e875f7qdy" path="res://graphics/statues/Maat.png" id="18_ojeh2"]
 [ext_resource type="PackedScene" uid="uid://m1dfo0nwoif0" path="res://scenes/rift.tscn" id="21_asrm1"]
-=======
-[ext_resource type="PackedScene" path="res://scenes/spike_obstacle.tscn" id="14_sqedk"]
->>>>>>> 6df1c90a2a075f77109b0bfb57dd4eedcb7b7f4c
 
 [sub_resource type="Theme" id="Theme_myg01"]
 default_font = ExtResource("3_btjdu")
@@ -120,6 +117,21 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.5), Color(0, 0, 0, 0.5), Color(0, 0, 0, 0)]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Audio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_qf74q")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_km8ko"]
 _data = {
@@ -239,6 +251,8 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_km8ko")
 }
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="CanvasLayer/AnimationPlayer"]
 
 [node name="ParallaxMountains" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.1, 1)
@@ -579,7 +593,7 @@ libraries = {
 }
 
 [node name="Button1" type="Area2D" parent="Buttons"]
-position = Vector2(200, 40)
+position = Vector2(712, 40)
 collision_layer = 8
 collision_mask = 8
 
@@ -605,7 +619,7 @@ position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_ywp6g")
 
 [node name="Button3" type="Area2D" parent="Buttons"]
-position = Vector2(712, 40)
+position = Vector2(200, 40)
 collision_layer = 8
 collision_mask = 8
 
@@ -618,7 +632,7 @@ position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_ywp6g")
 
 [node name="Sprite2D" type="Sprite2D" parent="Buttons"]
-position = Vector2(200, 0)
+position = Vector2(712, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("16_2v6w0")
 
@@ -628,7 +642,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("17_idp3t")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Buttons"]
-position = Vector2(712, 0)
+position = Vector2(200, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("18_ojeh2")
 

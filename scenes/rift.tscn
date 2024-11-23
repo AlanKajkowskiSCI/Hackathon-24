@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://m1dfo0nwoif0"]
+[gd_scene load_steps=9 format=3 uid="uid://m1dfo0nwoif0"]
 
 [ext_resource type="Script" path="res://scripts/rift.gd" id="1_12vwn"]
 [ext_resource type="Texture2D" uid="uid://boldxaksc0ygh" path="res://graphics/rift.png" id="1_qry1t"]
+[ext_resource type="FontFile" uid="uid://s6g0k4l1avi6" path="res://fonts/operius_mono.ttf" id="3_shq4a"]
 
 [sub_resource type="Animation" id="Animation_50o1r"]
 resource_name = "rotate"
@@ -44,6 +45,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvmpe"]
 size = Vector2(96, 96)
 
+[sub_resource type="Theme" id="Theme_xxtnk"]
+default_font = ExtResource("3_shq4a")
+default_font_size = 16
+
 [node name="Rift" type="Area2D"]
 collision_layer = 16
 collision_mask = 16
@@ -61,3 +66,13 @@ autoplay = "rotate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nvmpe")
+
+[node name="ActionLabel" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -88.0
+offset_right = 62.0
+offset_bottom = -65.0
+theme = SubResource("Theme_xxtnk")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "press r"

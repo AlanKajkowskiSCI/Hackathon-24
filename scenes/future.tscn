@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://orbwm3kycr7n" path="res://graphics/papier.png" id="9_crqdg"]
 [ext_resource type="Texture2D" uid="uid://cu6gwcuafk42j" path="res://assets/spaceship.png" id="9_eirvk"]
 [ext_resource type="Texture2D" uid="uid://ckkf43a888mib" path="res://assets/tlo-future.png" id="10_wue68"]
-[ext_resource type="PackedScene" uid="uid://br3x07vx30eev" path="res://scenes/moving_obstacle-future.tscn" id="12_d7iny"]
+[ext_resource type="PackedScene" uid="uid://cs5c0xuckpl7e" path="res://scenes/moving_obstacle-future.tscn" id="12_d7iny"]
 [ext_resource type="Texture2D" uid="uid://03eyqsab7yd0" path="res://assets/tlo2-korytarz-future.png" id="13_44oe1"]
 [ext_resource type="Texture2D" uid="uid://dr01xcxuj0bmi" path="res://assets/tlo-korytarz-future.png" id="13_mqc2f"]
 [ext_resource type="Texture2D" uid="uid://j4btqs303a4w" path="res://assets/reaktor.png" id="15_cxc4i"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy6leh4gxgmof"]
+[gd_scene load_steps=4 format=3 uid="uid://dy6leh4gxgmof"]
 
+[ext_resource type="Script" path="res://scripts/spike_obstacle.gd" id="1_oaixi"]
 [ext_resource type="Texture2D" uid="uid://cj55x8b6v3b3i" path="res://graphics/sand_spike.png" id="1_tjd2w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74x23"]
@@ -8,6 +9,7 @@ size = Vector2(56, 184)
 [node name="SpikeObstacle" type="Area2D"]
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("1_oaixi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)

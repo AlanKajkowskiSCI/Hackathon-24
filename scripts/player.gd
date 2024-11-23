@@ -8,12 +8,21 @@ var time_stop_cooldown_fx = preload("res://scenes/time_stop_cooldown_fx.tscn")
 @onready var countdown_player: Node = $CountdownPlayer
 @onready var time_stop_timer: Node = $TimeStopTimer
 @onready var time_stop_cooldown: Node = $TimeStopCooldown
+@onready var audio_jump: Node = $AudioJump
+@onready var audio_time_stop: Node = $AudioTimeStop
+@onready var audio_hit: Node = $AudioHit
+@onready var collision_shape: Node = $CollisionShape2D
 
 var speed: float = 400
 var jump_height: float = -900
 var gravity: float = 2000
 
 var time_stop: bool = false
+
+func kill():
+	global_position.x = 224
+	global_position.y = 320
+	audio_hit.play()
 
 func countdown(number: int):
 	var instance = countdown_fx.instantiate()
@@ -29,6 +38,7 @@ func _physics_process(delta: float):
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_height
+		audio_jump.play()
 	
 	var direction = Input.get_axis("left", "right")
 	
@@ -40,9 +50,7 @@ func _physics_process(delta: float):
 		Global.time_stop = true
 		countdown_player.play("countdown")
 		time_stop_timer.start()
-		
-		global_position.x = 8200
-		global_position.y = 200
+		audio_time_stop.play()
 		
 	if not is_on_floor():
 		sprite.play("jump")
@@ -69,6 +77,9 @@ func _physics_process(delta: float):
 	else:
 		camera.offset.x = lerp(camera.offset.x, 0.0, 0.2)
 		camera.offset.y = lerp(camera.offset.y, 0.0, 0.2)
+		
+	if global_position.y > 768:
+		kill()
 
 func _on_time_stop_timer_timeout():
 	Global.time_stop = false
