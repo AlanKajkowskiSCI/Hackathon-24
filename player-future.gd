@@ -3,7 +3,7 @@ extends CharacterBody2D
 var countdown_fx = preload("res://scenes/countdown_fx.tscn")
 
 @onready var sprite: Node = $AnimatedSprite2D
-@onready var camera: Node = get_parent().get_node("Camera2D")
+@onready var camera: Node = get_node("Camera2D")
 @onready var countdown_player: Node = $CountdownPlayer
 @onready var time_stop_timer: Node = $TimeStopTimer
 
@@ -50,13 +50,7 @@ func _physics_process(delta: float):
 		sprite.flip_h = 0
 	elif direction < 0:
 		sprite.flip_h = 1
-		
-	if global_position.x > 2300:
-		camera.offset.x = lerp(camera.offset.x, global_position.x - 200, 0.2)
-	elif global_position.x > 1150:
-		camera.offset.x = lerp(camera.offset.x, 1150.0, 0.2)
-	else:
-		camera.offset.x = lerp(camera.offset.x, 0.0, 0.0)
+	
 
 func _on_time_stop_timer_timeout():
 	Global.time_stop = false

@@ -71,7 +71,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a4gm"]
-size = Vector2(80, 96)
+size = Vector2(62, 88)
 
 [sub_resource type="Animation" id="Animation_yl28k"]
 resource_name = "countdown"
@@ -112,6 +112,7 @@ sprite_frames = SubResource("SpriteFrames_2j4hp")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_5a4gm")
 
 [node name="CountdownPlayer" type="AnimationPlayer" parent="."]

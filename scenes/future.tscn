@@ -1,13 +1,15 @@
-[gd_scene load_steps=16 format=4 uid="uid://da2bg322p6ksl"]
+[gd_scene load_steps=18 format=4 uid="uid://da2bg322p6ksl"]
 
 [ext_resource type="Texture2D" uid="uid://c3gyce2dk8vym" path="res://assets/sciana-nowoczesna.png" id="1_8dyw2"]
 [ext_resource type="Texture2D" uid="uid://811er2mhsson" path="res://assets/declaration.png" id="2_vthoc"]
 [ext_resource type="Texture2D" uid="uid://imm7518cbjyg" path="res://assets/podesty-future.png" id="3_goven"]
 [ext_resource type="Texture2D" uid="uid://bpn044b4qpa7p" path="res://assets/kosmos.png" id="4_vpoum"]
 [ext_resource type="PackedScene" uid="uid://btnwya23mkwso" path="res://scenes/player.tscn" id="5_13ns3"]
+[ext_resource type="Script" path="res://player-future.gd" id="6_jwj8i"]
 [ext_resource type="Texture2D" uid="uid://c5wi3dqcc1sw2" path="res://assets/1000011655.jpg" id="8_r55t6"]
 [ext_resource type="PackedScene" uid="uid://cxxfav2n3nb7f" path="res://scenes/power_collectible.tscn" id="8_y0y0u"]
 [ext_resource type="Texture2D" uid="uid://orbwm3kycr7n" path="res://graphics/papier.png" id="9_crqdg"]
+[ext_resource type="Texture2D" uid="uid://cu6gwcuafk42j" path="res://assets/spaceship.png" id="9_eirvk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2cr3"]
 texture = ExtResource("1_8dyw2")
@@ -53,7 +55,6 @@ scale = Vector2(5, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1.5, -3.39999)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vqeqq")
 one_way_collision = true
 
@@ -65,13 +66,14 @@ position = Vector2(-219, -139)
 shape = SubResource("RectangleShape2D_t345t")
 one_way_collision = true
 
-[node name="Player" parent="." instance=ExtResource("5_13ns3")]
+[node name="Player-future" parent="." instance=ExtResource("5_13ns3")]
 position = Vector2(1005, 952)
 scale = Vector2(3.565, 3.565)
+script = ExtResource("6_jwj8i")
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(98.7377, -93.6886)
-scale = Vector2(0.280505, 0.280505)
+[node name="Camera2D" type="Camera2D" parent="Player-future"]
+position = Vector2(95.083, -93.689)
+scale = Vector2(24.381, 24.381)
 zoom = Vector2(0.415, 0.415)
 
 [node name="PowerCollectible" parent="." instance=ExtResource("8_y0y0u")]
@@ -96,3 +98,9 @@ one_way_collision = true
 position = Vector2(2208, 6154)
 scale = Vector2(1.44813, 0.4375)
 texture = ExtResource("8_r55t6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(2002, 659.5)
+scale = Vector2(25.4219, 15.5781)
+texture = ExtResource("9_eirvk")
