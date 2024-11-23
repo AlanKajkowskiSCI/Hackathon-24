@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://i5difyjia4vh"]
+[gd_scene load_steps=4 format=3 uid="uid://dnawpjf5gqrt2"]
 
 [ext_resource type="Texture2D" uid="uid://bvtqljbs4c2jt" path="res://assets/power-future.png" id="1_e3uom"]
 [ext_resource type="Script" path="res://scenes/power_future.gd" id="1_hf3qs"]
@@ -18,3 +18,5 @@ texture = ExtResource("1_e3uom")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(22, 25)
 shape = SubResource("CapsuleShape2D_oral1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

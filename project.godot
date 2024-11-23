@@ -19,6 +19,11 @@ config/icon="res://assets/Reklamowanie gry/Ikonka gry.png"
 
 Global="*res://scripts/global.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
+
 [input]
 
 jump={

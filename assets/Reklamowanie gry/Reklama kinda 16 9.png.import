@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ihufkcb07c73"
-path="res://.godot/imported/Ikonka gry.png-e991d6fd525d47f31d297e8e78977bf1.ctex"
+uid="uid://duvmyl3gkdc66"
+path="res://.godot/imported/Reklama kinda 16 9.png-c1a84f054a6d59875aa85f8f5d045cd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Reklamowanie gry/Ikonka gry.png"
-dest_files=["res://.godot/imported/Ikonka gry.png-e991d6fd525d47f31d297e8e78977bf1.ctex"]
+source_file="res://assets/Reklamowanie gry/Reklama kinda 16 9.png"
+dest_files=["res://.godot/imported/Reklama kinda 16 9.png-c1a84f054a6d59875aa85f8f5d045cd6.ctex"]
 
 [params]
 

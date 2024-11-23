@@ -8,6 +8,6 @@ func _process(delta: float):
 		label.visible = true
 		
 		if Input.is_action_just_pressed("read"):
-			pass # TUTAJ DAJ KOD NA DRUGI ŚWIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+			get_tree().change_scene_to_file("res://scenes/future.tscn")
 	else:
 		label.visible = false

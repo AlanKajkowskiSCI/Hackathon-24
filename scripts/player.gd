@@ -19,6 +19,12 @@ var gravity: float = 2000
 
 var time_stop: bool = false
 
+func _ready():
+	if get_tree().current_scene.name == "future":
+		speed = 800
+		jump_height = -2000
+		gravity = 2000
+
 func kill():
 	global_position.x = 224
 	global_position.y = 320
@@ -51,6 +57,9 @@ func _physics_process(delta: float):
 		countdown_player.play("countdown")
 		time_stop_timer.start()
 		audio_time_stop.play()
+		
+		global_position.x = 8200
+		global_position.y = 200
 		
 	if not is_on_floor():
 		sprite.play("jump")

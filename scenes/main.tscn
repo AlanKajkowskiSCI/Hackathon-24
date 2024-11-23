@@ -231,6 +231,7 @@ theme_override_constants/outline_size = 16
 text = "Time freeze"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
 anchors_preset = 15
@@ -246,6 +247,7 @@ theme_override_constants/outline_size = 16
 text = "Press e to stop time"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
