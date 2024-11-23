@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://lyjs0niomobn" path="res://graphics/platform_sand_02.png" id="4_c1w0g"]
 [ext_resource type="Texture2D" uid="uid://tlelac3usw3s" path="res://graphics/background_clouds.png" id="5_jxoqd"]
 [ext_resource type="Texture2D" uid="uid://cljxfro654ja5" path="res://graphics/platform_sand_03.png" id="5_x60ov"]
-[ext_resource type="PackedScene" uid="uid://dy6leh4gxgmof" path="res://scenes/spike_obstacle.tscn" id="14_sqedk"]
+[ext_resource type="PackedScene" path="res://scenes/spike_obstacle.tscn" id="14_sqedk"]
 
 [sub_resource type="Theme" id="Theme_myg01"]
 default_font = ExtResource("3_btjdu")
