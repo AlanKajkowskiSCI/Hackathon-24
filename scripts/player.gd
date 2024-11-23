@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
 var countdown_fx = preload("res://scenes/countdown_fx.tscn")
+var time_stop_cooldown_fx = preload("res://scenes/time_stop_cooldown_fx.tscn")
 
 @onready var sprite: Node = $AnimatedSprite2D
 @onready var camera: Node = get_parent().get_node("Camera2D")
 @onready var countdown_player: Node = $CountdownPlayer
 @onready var time_stop_timer: Node = $TimeStopTimer
+@onready var time_stop_cooldown: Node = $TimeStopCooldown
 
-var speed: float = 1000
+var speed: float = 400
 var jump_height: float = -900
 var gravity: float = 2000
 
@@ -34,8 +36,8 @@ func _physics_process(delta: float):
 	
 	move_and_slide()
 	
-	if Input.is_action_just_pressed("time_stop_toggle"):
-		Global.time_stop = not Global.time_stop
+	if Input.is_action_just_pressed("time_stop_toggle") and time_stop_timer.time_left == 0 and time_stop_cooldown.time_left == 0:
+		Global.time_stop = true
 		countdown_player.play("countdown")
 		time_stop_timer.start()
 		
@@ -60,3 +62,10 @@ func _physics_process(delta: float):
 
 func _on_time_stop_timer_timeout():
 	Global.time_stop = false
+	
+	var instance = time_stop_cooldown_fx.instantiate()
+	instance.global_position.y -= 100
+	
+	add_child(instance)
+	
+	time_stop_cooldown.start()

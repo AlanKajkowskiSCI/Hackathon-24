@@ -123,4 +123,8 @@ libraries = {
 wait_time = 3.0
 one_shot = true
 
+[node name="TimeStopCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="timeout" from="TimeStopTimer" to="." method="_on_time_stop_timer_timeout"]
