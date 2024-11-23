@@ -8,7 +8,7 @@ var countdown_fx = preload("res://scenes/countdown_fx.tscn")
 @onready var time_stop_timer: Node = $TimeStopTimer
 
 var speed: float = 1000
-var jump_height: float = -1700
+var jump_height: float = -2000
 var gravity: float = 2000
 
 var time_stop: bool = false
