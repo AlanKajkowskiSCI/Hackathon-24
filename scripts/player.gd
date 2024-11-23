@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var sprite: Node = $AnimatedSprite2D
 
-var speed: float = 400
+var speed: float = 1000
 var jump_height: float = -900
 var gravity: float = 2000
 
