@@ -5,5 +5,5 @@ extends Node2D
 func _process(_delta: float):
 	animation.speed_scale = int(not Global.time_stop)
 
-func _on_area_2d_body_entered(body: Node):
+func _on_area_2d_body_entered(_body: Node):
 	get_tree().reload_current_scene()

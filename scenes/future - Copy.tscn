@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://da2bg322p6ksl"]
+[gd_scene load_steps=20 format=4 uid="uid://bflu4hkaf1652"]
 
 [ext_resource type="Texture2D" uid="uid://c3gyce2dk8vym" path="res://assets/sciana-nowoczesna.png" id="1_8dyw2"]
 [ext_resource type="Texture2D" uid="uid://811er2mhsson" path="res://assets/declaration.png" id="2_vthoc"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://orbwm3kycr7n" path="res://graphics/papier.png" id="9_crqdg"]
 [ext_resource type="Texture2D" uid="uid://cu6gwcuafk42j" path="res://assets/spaceship.png" id="9_eirvk"]
 [ext_resource type="PackedScene" uid="uid://dhlcflji112xn" path="res://scenes/moving_obstacle.tscn" id="11_jb5qi"]
-[ext_resource type="PackedScene" uid="uid://br3x07vx30eev" path="res://scenes/moving_obstacle-future.tscn" id="12_d7iny"]
+[ext_resource type="PackedScene" uid="uid://cs5c0xuckpl7e" path="res://scenes/moving_obstacle-future.tscn" id="12_d7iny"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2cr3"]
 texture = ExtResource("1_8dyw2")

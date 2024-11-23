@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://br3x07vx30eev"]
+[gd_scene load_steps=7 format=3 uid="uid://cs5c0xuckpl7e"]
 
 [ext_resource type="Script" path="res://scripts/moving_obstacle.gd" id="1_h677m"]
 [ext_resource type="Texture2D" uid="uid://b1e5c3gj4a3l3" path="res://assets/bolec-futurystyczny.png" id="2_aabf2"]
@@ -35,18 +35,18 @@ _data = {
 [node name="MovingObstacle" type="Node2D"]
 script = ExtResource("1_h677m")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(-12, 0)
 scale = Vector2(3.5, 11.5)
 texture = ExtResource("2_aabf2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-12, 0)
 shape = SubResource("RectangleShape2D_74x23")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
 libraries = {
 "": SubResource("AnimationLibrary_luify")
 }

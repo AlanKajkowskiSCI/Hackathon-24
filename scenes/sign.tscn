@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://3e0xot2458dm"]
+
+[ext_resource type="Script" path="res://scripts/sign.gd" id="1_b36o5"]
+[ext_resource type="Texture2D" uid="uid://yinlbufe5p68" path="res://graphics/sign.png" id="1_bi81c"]
+[ext_resource type="FontFile" uid="uid://s6g0k4l1avi6" path="res://fonts/operius_mono.ttf" id="2_kb41t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glbvf"]
+size = Vector2(80, 80)
+
+[sub_resource type="Theme" id="Theme_h2d2f"]
+default_font = ExtResource("2_kb41t")
+default_font_size = 16
+
+[sub_resource type="Animation" id="Animation_nla83"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xgwgn"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.341, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_73v3b"]
+_data = {
+"RESET": SubResource("Animation_nla83"),
+"show": SubResource("Animation_xgwgn")
+}
+
+[node name="Sign" type="Area2D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_b36o5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_bi81c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_glbvf")
+
+[node name="ActionLabel" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -104.0
+offset_right = 62.0
+offset_bottom = -81.0
+theme = SubResource("Theme_h2d2f")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "press r"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -200.0
+offset_right = 536.0
+offset_bottom = -137.0
+scale = Vector2(1e-05, 1e-05)
+theme = SubResource("Theme_h2d2f")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "\"Everything begins with light,
+The soul journeys through darkness,
+And truth shows the path to eternity.\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_73v3b")
+}

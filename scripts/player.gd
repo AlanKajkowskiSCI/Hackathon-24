@@ -41,6 +41,9 @@ func _physics_process(delta: float):
 		countdown_player.play("countdown")
 		time_stop_timer.start()
 		
+		global_position.x = 8200
+		global_position.y = 200
+		
 	if not is_on_floor():
 		sprite.play("jump")
 	elif direction == 0:
@@ -53,12 +56,19 @@ func _physics_process(delta: float):
 	elif direction < 0:
 		sprite.flip_h = 1
 		
-	if global_position.x > 2300:
+	if global_position.x > 9340:
+		camera.offset.x = lerp(camera.offset.x, 10650.0, 0.2)
+		camera.offset.y = lerp(camera.offset.y, -150.0, 0.2)
+	if global_position.x > 8064:
+		camera.offset.x = lerp(camera.offset.x, 8200.0, 0.2)
+		camera.offset.y = lerp(camera.offset.y, -150.0, 0.2)
+	elif global_position.x > 2300:
 		camera.offset.x = lerp(camera.offset.x, global_position.x - 200, 0.2)
 	elif global_position.x > 1150:
 		camera.offset.x = lerp(camera.offset.x, 1150.0, 0.2)
 	else:
-		camera.offset.x = lerp(camera.offset.x, 0.0, 0.0)
+		camera.offset.x = lerp(camera.offset.x, 0.0, 0.2)
+		camera.offset.y = lerp(camera.offset.y, 0.0, 0.2)
 
 func _on_time_stop_timer_timeout():
 	Global.time_stop = false

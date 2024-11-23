@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dft7g3x1jwwpv"]
+[gd_scene load_steps=37 format=4 uid="uid://dft7g3x1jwwpv"]
 
 [ext_resource type="PackedScene" uid="uid://btnwya23mkwso" path="res://scenes/player.tscn" id="1_aqim1"]
 [ext_resource type="Texture2D" uid="uid://ytp2cfy1o3u4" path="res://graphics/background_mountains.png" id="1_fln2x"]
@@ -13,7 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://lyjs0niomobn" path="res://graphics/platform_sand_02.png" id="4_c1w0g"]
 [ext_resource type="Texture2D" uid="uid://tlelac3usw3s" path="res://graphics/background_clouds.png" id="5_jxoqd"]
 [ext_resource type="Texture2D" uid="uid://cljxfro654ja5" path="res://graphics/platform_sand_03.png" id="5_x60ov"]
+[ext_resource type="PackedScene" uid="uid://3e0xot2458dm" path="res://scenes/sign.tscn" id="14_ko7yi"]
 [ext_resource type="PackedScene" uid="uid://dy6leh4gxgmof" path="res://scenes/spike_obstacle.tscn" id="14_sqedk"]
+[ext_resource type="Texture2D" uid="uid://dxeuvxybd8p56" path="res://graphics/button.png" id="15_jdqrm"]
+[ext_resource type="Script" path="res://scripts/buttons.gd" id="15_w1joc"]
+[ext_resource type="Texture2D" uid="uid://cdm0opuuciuwo" path="res://graphics/statues/Ra.png" id="16_2v6w0"]
+[ext_resource type="Texture2D" uid="uid://dwhompqtyi80y" path="res://graphics/statues/anubis.png" id="17_idp3t"]
+[ext_resource type="Texture2D" uid="uid://diy6e875f7qdy" path="res://graphics/statues/Maat.png" id="18_ojeh2"]
+[ext_resource type="PackedScene" uid="uid://m1dfo0nwoif0" path="res://scenes/rift.tscn" id="21_asrm1"]
 
 [sub_resource type="Theme" id="Theme_myg01"]
 default_font = ExtResource("3_btjdu")
@@ -140,6 +147,48 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_nyux8"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2npc5")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4d1p"]
+size = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_8npp4"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(968, -120), Vector2(968, -376)]
+}
+
+[sub_resource type="Animation" id="Animation_ovum6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(968, -120)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bitja"]
+_data = {
+"RESET": SubResource("Animation_ovum6"),
+"open": SubResource("Animation_8npp4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywp6g"]
+size = Vector2(112, 32)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_yd6p8")
@@ -452,10 +501,6 @@ scale = Vector2(1, -1)
 position = Vector2(7288, 616)
 scale = Vector2(1, -1)
 
-[node name="MovingObstacle15" parent="MovingObstacles" instance=ExtResource("3_u337s")]
-position = Vector2(7608, 616)
-scale = Vector2(1, -1)
-
 [node name="MovingObstacle16" parent="MovingObstacles" instance=ExtResource("3_u337s")]
 position = Vector2(7928, 616)
 scale = Vector2(1, -1)
@@ -478,11 +523,8 @@ position = Vector2(1984, 224)
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMaps"]
 position = Vector2(32, 40)
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD//wEAAAAAAAAAAAD//wMAAAAAAAAAAAD//wUAAAAAAAAAAAD//wcAAAAAAAAAAAD//wkAAAAAAAAAAAABAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAABAP//AAAAAAAAAAADAP//AAAAAAAAAAAFAP//AAAAAAAAAAAHAP//AAAAAAAAAAAJAP//AAAAAAAAAAALAP//AAAAAAAAAAAHAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAALAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAARAAkAAAAAAAAAAAARAAMAAAAAAAAAAAARAAEAAAAAAAAAAAARAP//AAAAAAAAAAAPAP//AAAAAAAAAAANAP//AAAAAAAAAAATAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAAbAAkAAAAAAAAAAAAdAAkAAAAAAAAAAAAfAAkAAAAAAAAAAAAhAAkAAAAAAAAAAAAjAAkAAAAAAAAAAAATAP//AAAAAAAAAAAVAP//AAAAAAAAAAAXAP//AAAAAAAAAAAZAP//AAAAAAAAAAAbAP//AAAAAAAAAAAdAP//AAAAAAAAAAAfAP//AAAAAAAAAAAhAP//AAAAAAAAAAAjAP//AAAAAAAAAAAjAAEAAAAAAAAAAAAjAAMAAAAAAAAAAAAlAAkAAAAAAAAAAAAnAAkAAAAAAAAAAABAAAcAAAAAAAAAAABCAAcAAAAAAAAAAABEAAcAAAAAAAAAAABGAAcAAAAAAAAAAABGAAUAAAAAAAAAAABGAAMAAAAAAAAAAABIAAMAAAAAAAAAAABKAAMAAAAAAAAAAABKAAUAAAAAAAAAAABKAAcAAAAAAAAAAABKAAkAAAAAAAAAAABMAAkAAAAAAAAAAABOAAkAAAAAAAAAAABQAAkAAAAAAAAAAABSAAkAAAAAAAAAAABSAAMAAAAAAAAAAABSAAEAAAAAAAAAAABSAP//AAAAAAAAAABSAP3/AAAAAAAAAABAAAkAAAAAAAAAAABUAAkAAAAAAAAAAABUAAMAAAAAAAAAAABWAAMAAAAAAAAAAABWAAkAAAAAAAAAAABYAAMAAAAAAAAAAABYAAkAAAAAAAAAAABaAAMAAAAAAAAAAABcAAMAAAAAAAAAAABaAAkAAAAAAAAAAABcAAkAAAAAAAAAAABeAAkAAAAAAAAAAABgAAkAAAAAAAAAAABcAAEAAAAAAAAAAABcAP//AAAAAAAAAABcAP3/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD//wEAAAAAAAAAAAD//wMAAAAAAAAAAAD//wUAAAAAAAAAAAD//wcAAAAAAAAAAAD//wkAAAAAAAAAAAABAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAABAP//AAAAAAAAAAADAP//AAAAAAAAAAAFAP//AAAAAAAAAAAHAP//AAAAAAAAAAAJAP//AAAAAAAAAAALAP//AAAAAAAAAAAHAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAALAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAARAAkAAAAAAAAAAAARAAMAAAAAAAAAAAARAAEAAAAAAAAAAAARAP//AAAAAAAAAAAPAP//AAAAAAAAAAANAP//AAAAAAAAAAATAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAAbAAkAAAAAAAAAAAAdAAkAAAAAAAAAAAAfAAkAAAAAAAAAAAAhAAkAAAAAAAAAAAAjAAkAAAAAAAAAAAATAP//AAAAAAAAAAAVAP//AAAAAAAAAAAXAP//AAAAAAAAAAAZAP//AAAAAAAAAAAbAP//AAAAAAAAAAAdAP//AAAAAAAAAAAfAP//AAAAAAAAAAAhAP//AAAAAAAAAAAjAP//AAAAAAAAAAAjAAEAAAAAAAAAAAAjAAMAAAAAAAAAAAAlAAkAAAAAAAAAAAAnAAkAAAAAAAAAAABAAAcAAAAAAAAAAABCAAcAAAAAAAAAAABEAAcAAAAAAAAAAABGAAcAAAAAAAAAAABGAAUAAAAAAAAAAABGAAMAAAAAAAAAAABIAAMAAAAAAAAAAABKAAMAAAAAAAAAAABKAAUAAAAAAAAAAABKAAcAAAAAAAAAAABKAAkAAAAAAAAAAABMAAkAAAAAAAAAAABOAAkAAAAAAAAAAABQAAkAAAAAAAAAAABSAAkAAAAAAAAAAABSAAMAAAAAAAAAAABSAAEAAAAAAAAAAABSAP//AAAAAAAAAABSAP3/AAAAAAAAAABAAAkAAAAAAAAAAABUAAkAAAAAAAAAAABUAAMAAAAAAAAAAABWAAMAAAAAAAAAAABWAAkAAAAAAAAAAABYAAMAAAAAAAAAAABYAAkAAAAAAAAAAABaAAMAAAAAAAAAAABcAAMAAAAAAAAAAABaAAkAAAAAAAAAAABcAAkAAAAAAAAAAABeAAkAAAAAAAAAAABgAAkAAAAAAAAAAABcAAEAAAAAAAAAAABcAP//AAAAAAAAAABcAP3/AAAAAAAAAAB/AAUAAAAAAAAAAAB/AAcAAAAAAAAAAAB/AAkAAAAAAAAAAACBAAUAAAAAAAAAAACDAAUAAAAAAAAAAACFAAUAAAAAAAAAAACHAAUAAAAAAAAAAACJAAUAAAAAAAAAAACLAAUAAAAAAAAAAACNAAUAAAAAAAAAAACPAAUAAAAAAAAAAACRAAUAAAAAAAAAAACRAP//AAAAAAAAAACRAP3/AAAAAAAAAACTAAUAAAAAAAAAAACVAAUAAAAAAAAAAACXAAUAAAAAAAAAAACZAAUAAAAAAAAAAACbAAUAAAAAAAAAAACdAAUAAAAAAAAAAACfAAUAAAAAAAAAAAChAAUAAAAAAAAAAAChAAMAAAAAAAAAAAChAAEAAAAAAAAAAAChAP//AAAAAAAAAAChAP3/AAAAAAAAAACfAP3/AAAAAAAAAACdAP3/AAAAAAAAAACbAP3/AAAAAAAAAACZAP3/AAAAAAAAAACXAP3/AAAAAAAAAACVAP3/AAAAAAAAAACTAP3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_nyux8")
-
-[node name="Player" parent="." instance=ExtResource("1_aqim1")]
-position = Vector2(224, 320)
 
 [node name="SpikeObstacle" parent="." instance=ExtResource("14_sqedk")]
 position = Vector2(6376, 456)
@@ -497,3 +539,109 @@ position = Vector2(6664, 264)
 [node name="SpikeObstacle4" parent="." instance=ExtResource("14_sqedk")]
 position = Vector2(6664, 96)
 scale = Vector2(1, -1)
+
+[node name="Sign" parent="." instance=ExtResource("14_ko7yi")]
+position = Vector2(8320, 280)
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(8376, 256)
+script = ExtResource("15_w1joc")
+
+[node name="PuzzleEnterance" type="Node2D" parent="Buttons"]
+position = Vector2(968, -120)
+
+[node name="Block" type="CharacterBody2D" parent="Buttons/PuzzleEnterance"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/PuzzleEnterance/Block"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_4tx8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/PuzzleEnterance/Block"]
+shape = SubResource("RectangleShape2D_n4d1p")
+
+[node name="Block2" type="CharacterBody2D" parent="Buttons/PuzzleEnterance"]
+position = Vector2(0, 128)
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/PuzzleEnterance/Block2"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_4tx8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/PuzzleEnterance/Block2"]
+shape = SubResource("RectangleShape2D_n4d1p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/PuzzleEnterance"]
+libraries = {
+"": SubResource("AnimationLibrary_bitja")
+}
+
+[node name="Button1" type="Area2D" parent="Buttons"]
+position = Vector2(200, 40)
+collision_layer = 8
+collision_mask = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Button1"]
+scale = Vector2(4, 4)
+texture = ExtResource("15_jdqrm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button1"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_ywp6g")
+
+[node name="Button2" type="Area2D" parent="Buttons"]
+position = Vector2(456, 40)
+collision_layer = 8
+collision_mask = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Button2"]
+scale = Vector2(4, 4)
+texture = ExtResource("15_jdqrm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button2"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_ywp6g")
+
+[node name="Button3" type="Area2D" parent="Buttons"]
+position = Vector2(712, 40)
+collision_layer = 8
+collision_mask = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Button3"]
+scale = Vector2(4, 4)
+texture = ExtResource("15_jdqrm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button3"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_ywp6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons"]
+position = Vector2(200, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("16_2v6w0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Buttons"]
+position = Vector2(456, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("17_idp3t")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Buttons"]
+position = Vector2(712, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("18_ojeh2")
+
+[node name="Timer" type="Timer" parent="Buttons"]
+wait_time = 0.5
+one_shot = true
+
+[node name="Rift" parent="." instance=ExtResource("21_asrm1")]
+position = Vector2(10208, 224)
+
+[node name="Player" parent="." instance=ExtResource("1_aqim1")]
+position = Vector2(224, 320)
+
+[connection signal="body_entered" from="Buttons/Button1" to="Buttons" method="_on_button_1_body_entered"]
+[connection signal="body_exited" from="Buttons/Button1" to="Buttons" method="_on_button_1_body_exited"]
+[connection signal="body_entered" from="Buttons/Button2" to="Buttons" method="_on_button_2_body_entered"]
+[connection signal="body_exited" from="Buttons/Button2" to="Buttons" method="_on_button_2_body_exited"]
+[connection signal="body_entered" from="Buttons/Button3" to="Buttons" method="_on_button_3_body_entered"]
+[connection signal="body_exited" from="Buttons/Button3" to="Buttons" method="_on_button_3_body_exited"]
+[connection signal="timeout" from="Buttons/Timer" to="Buttons" method="_on_timer_timeout"]
