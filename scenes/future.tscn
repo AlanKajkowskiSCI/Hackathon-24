@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://btnwya23mkwso" path="res://scenes/player.tscn" id="5_13ns3"]
 [ext_resource type="Texture2D" uid="uid://cu6gwcuafk42j" path="res://assets/spaceship.png" id="6_y4v1j"]
 [ext_resource type="PackedScene" uid="uid://cxxfav2n3nb7f" path="res://scenes/power_collectible.tscn" id="8_y0y0u"]
-[ext_resource type="Texture2D" uid="uid://d2ub5oa6ineuc" path="res://1000011655.jpg" id="9_tc7we"]
+[ext_resource type="Texture2D" uid="uid://orbwm3kycr7n" path="res://graphics/papier.png" id="9_crqdg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2cr3"]
 texture = ExtResource("1_8dyw2")
@@ -68,11 +68,23 @@ one_way_collision = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1498, 624)
-zoom = Vector2(0.315, 0.315)
+zoom = Vector2(0.455, 0.455)
 
 [node name="CameraMover" parent="Camera2D" instance=ExtResource("4_tihku")]
-position = Vector2(500, -17)
-scale = Vector2(1, 2)
+position = Vector2(1034.28, 111.385)
+scale = Vector2(3.033, 6.065)
+
+[node name="CameraMover2" parent="Camera2D" instance=ExtResource("4_tihku")]
+position = Vector2(1590, 839)
+scale = Vector2(53.765, 5)
+
+[node name="CameraMover3" parent="Camera2D" instance=ExtResource("4_tihku")]
+position = Vector2(1571, 1790)
+scale = Vector2(53.765, 5)
+
+[node name="CameraMover4" parent="Camera2D" instance=ExtResource("4_tihku")]
+position = Vector2(1505, 3018)
+scale = Vector2(53.765, 5)
 
 [node name="Player" parent="." instance=ExtResource("5_13ns3")]
 position = Vector2(535, 952)
@@ -86,15 +98,16 @@ repeat_size = Vector2(1024, 0)
 repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(3378, 668)
+position = Vector2(3394, 704)
 scale = Vector2(15.97, 15.97)
 texture = ExtResource("6_y4v1j")
 
 [node name="PowerCollectible" parent="." instance=ExtResource("8_y0y0u")]
+top_level = true
 position = Vector2(855, 3735)
 scale = Vector2(0.905, 0.905)
 
 [node name="Sprite2D2" type="Sprite2D" parent="PowerCollectible"]
-position = Vector2(1766.85, -2343.65)
-scale = Vector2(0.327884, 0.237655)
-texture = ExtResource("9_tc7we")
+position = Vector2(3.315, 5.5251)
+scale = Vector2(13.5359, 9.80664)
+texture = ExtResource("9_crqdg")
